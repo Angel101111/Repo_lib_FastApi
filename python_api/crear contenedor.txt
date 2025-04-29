@@ -1,0 +1,8 @@
+# Eliminar un contenedor (forzar eliminación si está en ejecución)
+docker rm -f mi_fastapi
+
+# Construir una imagen Docker a partir del Dockerfile en el directorio actual, etiquetándola como 'fastapi_app'
+docker build -t fastapi_app .
+
+# Ejecutar un contenedor en segundo plano, nombrarlo 'mi_fastapi', y mapear el puerto 8000 del host al 8000 del contenedor
+docker run -d --name mi_fastapi -p 8000:8000 fastapi_app
